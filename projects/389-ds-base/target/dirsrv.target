@@ -1,0 +1,6 @@
+[Unit]
+Description=389 Directory Server
+After=network.target
+
+[Install]
+WantedBy=multi-user.target

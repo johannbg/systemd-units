@@ -1,0 +1,11 @@
+[Unit]
+Description=389 Directory Server SNMP Subagent
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/ldap-agent.pid
+ExecStart=/usr/sbin/ldap-agent /etc/dirsrv/config/ldap-agent.conf 
+
+[Install]
+WantedBy=multi-user.target

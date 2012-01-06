@@ -1,0 +1,12 @@
+[Unit]
+Description=389 Directory Server %i.
+BindTo=dirsrv.target
+After=dirsrv.target
+
+[Service]
+Type=forking
+#LimitNOFILE=8192
+Environment=PIDDIR=/run/dirsrv
+EnvironmentFile=/etc/dirsrv/dirsrv
+EnvironmentFile=/etc/dirsrv/dirsrv-%i
+ExecStart=/usr/sbin/ns-slapd -D /etc/dirsrv/slapd-%i -i ${PIDDIR}/slapd-%i.pid -w ${PIDDIR}/slapd-%i.startpid
