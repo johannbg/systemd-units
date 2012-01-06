@@ -1,0 +1,9 @@
+[Unit]
+Description=Automount Daemon That Mounts Devices And NFS Hosts On Demand
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/amd -F /etc/amd.conf 
+
+[Install]
+WantedBy=multi-user.target
