@@ -1,0 +1,11 @@
+[Unit]
+Description=APT Automatic Updates
+
+[Service]
+Type=oneshot
+ExecStart=/bin/touch /var/lock/subsys/apt
+ExecStop=/bin/rm -f /var/lock/subsys/apt
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
