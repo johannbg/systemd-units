@@ -1,0 +1,11 @@
+[Unit]
+Description=Pound Reverse Proxy And Load-balancer
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/pound.pid
+ExecStart=/usr/sbin/pound
+
+[Install]
+WantedBy=multi-user.target
