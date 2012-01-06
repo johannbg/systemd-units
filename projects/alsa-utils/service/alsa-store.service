@@ -1,0 +1,8 @@
+[Unit]
+Description=Store Sound Card State
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/alsactl store
