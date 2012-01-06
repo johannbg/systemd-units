@@ -1,0 +1,7 @@
+[Unit]
+Description=The anaconda installation program
+Requires=basic.target
+Conflicts=rescue.service rescue.target
+After=basic.target rescue.service rescue.target
+AllowIsolate=yes
+Wants=loader.service anaconda-shell@tty2.service anaconda-shell@hvc1.service

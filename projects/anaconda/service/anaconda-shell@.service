@@ -1,0 +1,19 @@
+# anaconda-shell@.service
+# This is roughly equivalent to getty@.service, except we go straight to bash
+[Unit]
+Description=Shell on %I
+BindTo=dev-%i.device
+After=dev-%i.device
+
+[Service]
+Environment=TERM=linux
+WorkingDirectory=/
+ExecStart=-/sbin/agetty -n -l /bin/bash -o '--login' %I 38400
+Restart=always
+RestartSec=0
+TimeoutSec=0
+TTYPath=/dev/%i
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+KillSignal=SIGHUP
