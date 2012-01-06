@@ -1,0 +1,16 @@
+[Unit]
+Description=389 Administration Server
+After=network.target dirsrv.target
+
+[Service]
+Type=forking
+PIDFile=/run/dirsrv/admin-serv.pid
+# LimitNOFILE=8192
+# Environment=KRB5_KTNAME=/etc/dirsrv/myname.keytab
+ExecStart=/usr/sbin/httpd.worker -k start -f /etc/dirsrv/admin-serv/httpd.conf
+ExecReload=/usr/sbin/httpd.worker -t
+ExecReload=/usr/bin/kill -HUP $MAINPID
+ExecStop=/usr/sbin/httpd.worker -k stop
+
+[Install]
+WantedBy=multi-user.target
