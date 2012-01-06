@@ -1,0 +1,13 @@
+[Unit]
+Description= BackupPC server
+After=syslog.target 
+
+[Service]
+Type=oneshot
+User=backuppc
+Group=backuppc
+ExecStart=/usr/share/BackupPC/bin/BackupPC -d
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
