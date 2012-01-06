@@ -8,7 +8,7 @@ After=dev-%i.device
 [Service]
 Environment=TERM=linux
 WorkingDirectory=/
-ExecStart=-/sbin/agetty -n -l /bin/bash -o '--login' %I 38400
+ExecStart=-/usr/sbin/agetty -n -l /bin/bash -o '--login' %I 38400
 Restart=always
 RestartSec=0
 TimeoutSec=0

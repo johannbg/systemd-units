@@ -7,4 +7,4 @@ Conflicts=shutdown.target
 
 [Service]
 Type=oneshot
-ExecStart=-/sbin/alsactl restore
+ExecStart=-/usr/sbin/alsactl restore
