@@ -1,0 +1,8 @@
+[Unit]
+Description=ABRT Automated Bug Reporting Tool
+
+[Service]
+ExecStart=/usr/sbin/abrtd -d -s
+
+[Install]
+WantedBy=multi-user.target
