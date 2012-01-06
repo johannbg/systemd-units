@@ -1,0 +1,9 @@
+[Unit]
+Description=ACPI Event Daemon
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/acpid
+
+[Install]
+WantedBy=multi-user.target
