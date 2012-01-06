@@ -1,0 +1,9 @@
+[Unit]
+Description=Auto Nice Daemon
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/and
+
+[Install]
+WantedBy=multi-user.target
