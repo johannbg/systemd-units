@@ -1,0 +1,13 @@
+[Unit]
+Description=NTP Client/Server
+After=ntpdate.service
+Conflicts=ntpd.service
+
+[Service]
+Type=forking
+ExecStartPre=/usr/libexec/chrony-helper generate-commandkey
+ExecStart=/usr/sbin/chronyd -u chrony 
+ExecStartPost=/usr/libexec/chrony-helper add-dhclient-servers
+
+[Install]
+WantedBy=multi-user.target
