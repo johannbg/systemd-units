@@ -1,0 +1,14 @@
+[Unit]
+Description=Wait for chrony to synchronize system clock
+Wants=time-sync.target
+Requires=chronyd.service
+Before=time-sync.target
+After=chronyd.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/chronyc waitsync 60 0.1
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
