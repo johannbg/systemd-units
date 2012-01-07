@@ -1,0 +1,13 @@
+[Unit]
+Description=Initial Cloud-init Job (Metadata Service Crawler)
+Wants=cloud-init-local.service
+Requires=network.target
+After=network.target cloud-init-local.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cloud-init start
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Execute Cloud User/Final Scripts
+Requires=cloud-config.target
+After=network.target cloud-config.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/cloud-init-cfg all final
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

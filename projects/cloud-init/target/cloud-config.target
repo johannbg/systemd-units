@@ -1,0 +1,3 @@
+[Unit]
+Description=Cloud-config availability
+Requires=cloud-init-local.service cloud-init.service
