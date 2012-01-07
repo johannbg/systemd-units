@@ -1,0 +1,11 @@
+[Unit]
+Description=Cyrus-Imapd IMAP/POP3 Email Server
+After=network.target
+
+[Service]
+ExecStartPre=/usr/lib/cyrus-imapd/cyr_systemd_helper start
+ExecStart=/usr/lib/cyrus-imapd/cyrus-master 
+ExecStopPost=/usr/lib/cyrus-imapd/cyr_systemd_helper stop
+
+[Install]
+WantedBy=multi-user.target
