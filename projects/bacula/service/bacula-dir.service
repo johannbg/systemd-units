@@ -1,0 +1,10 @@
+[Unit]
+Description=Bacula Director Server Daemon
+After=network.target
+
+[Service]
+ExecStartPre=/usr/sbin/bacula-checkconf /etc/bacula/bacula-dir.conf
+ExecStart=/usr/sbin/bacula-dir -f -c /etc/bacula/bacula-dir.conf -u bacula -g bacula
+
+[Install]
+WantedBy=multi-user.target

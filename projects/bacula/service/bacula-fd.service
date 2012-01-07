@@ -1,0 +1,11 @@
+[Unit]
+Description=Bacula File Client Daemon
+After=network.target
+
+[Service]
+ExecStartPre=/usr/sbin/bacula-checkconf /etc/bacula/bacula-fd.conf
+ExecStart=/usr/sbin/bacula-fd -f /etc/bacula/bacula-fd.conf -c /etc/bacula/bacula-fd.conf -u root -g root
+IOSchedulingClass=idle
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Bacula Storage Server Daemon
+After=network.target
+
+[Service]
+ExecStartPre=/usr/sbin/bacula-checkconf /etc/bacula/bacula-sd.conf
+ExecStart=/usr/sbin/bacula-sd -f -c /etc/bacula/bacula-sd.conf -u bacula -g disk
+
+[Install]
+WantedBy=multi-user.target
