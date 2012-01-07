@@ -1,0 +1,9 @@
+[Unit]
+Description=Collectd
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/collectd -C /etc/collectd.conf -f
+
+[Install]
+WantedBy=multi-user.target
