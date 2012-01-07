@@ -1,0 +1,8 @@
+[Unit]
+Description=advanced interactive monitor
+
+[Service]
+ExecStart=/usr/bin/atop
+
+[Install]
+WantedBy=multi-user.target
