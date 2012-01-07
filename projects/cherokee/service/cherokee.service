@@ -1,0 +1,11 @@
+[Unit]
+Description=Cherokee Lightweight Web Server
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/cherokee
+ExecStart=/usr/sbin/cherokee -d -C /etc/cherokee/cherokee.conf
+
+[Install]
+WantedBy=multi-user.target
