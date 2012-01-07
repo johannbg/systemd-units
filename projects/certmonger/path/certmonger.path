@@ -1,0 +1,10 @@
+[Unit]
+Description=Certificate Monitoring And PKI Enrollment
+After=network.target dbus.service
+
+[Path]
+DirectoryNotEmpty=/var/lib/certmonger/requests
+
+[Install]
+WantedBy=multi-user.target
+Also=certmonger.service
