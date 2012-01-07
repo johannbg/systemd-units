@@ -1,0 +1,10 @@
+[Unit]
+Description=ARM4 Daemon
+
+[Service]
+Type=forking
+PIDFile=/run/arm4.pid
+ExecStart=/usr/bin/arm4_daemon
+
+[Install]
+WantedBy=multi-user.target
