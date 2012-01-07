@@ -1,0 +1,7 @@
+[Unit]
+Description=BitlBee Per-Connection Server
+
+[Service]
+User=bitlbee
+ExecStart=/usr/sbin//bitlbee -I
+StandardInput=socket

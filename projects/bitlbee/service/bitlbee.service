@@ -1,0 +1,8 @@
+[Unit]
+Description=BitlBee IRC/IM Gateway
+
+[Service]
+ExecStart=/usr/sbin/bitlbee -D -n
+
+[Install]
+WantedBy=multi-user.target
