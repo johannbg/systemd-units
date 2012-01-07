@@ -1,0 +1,10 @@
+[Unit]
+Description=Arpwatch daemon which keeps track of ethernet/ip address pairings
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/arpwatch -u arpwatch -e root -s 'root (Arpwatch)'
+
+[Install]
+WantedBy=multi-user.target
