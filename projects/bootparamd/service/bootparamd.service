@@ -1,0 +1,11 @@
+[Unit]
+Description=Bootparamd Netboot Sun Workstations From Linux
+After=network.target
+ConditionPathExists=/etc/bootparams
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/rpc.bootparamd
+
+[Install]
+WantedBy=multi-user.target
