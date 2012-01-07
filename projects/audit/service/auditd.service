@@ -1,0 +1,10 @@
+[Unit]
+Description=Security Auditing Service
+
+[Service]
+ExecStart=/usr/sbin/auditd -n
+ExecStartPost=/sbin/auditctl -R /etc/audit/audit.rules
+
+[Install]
+WantedBy=multi-user.target
+
