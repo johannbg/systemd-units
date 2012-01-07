@@ -1,0 +1,10 @@
+[Unit]
+Description=Single-node Data Storage Service For Hail
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/usr/sbin/chunkd
+
+[Install]
+WantedBy=multi-user.target
