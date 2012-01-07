@@ -1,0 +1,15 @@
+
+[Unit]
+Description=Condor Distributed High-Throughput-Computing
+After=network.target
+
+[Service]
+ControlGroup=/condor
+LimitNOFILE=16384
+ExecStart=/usr/sbin/condor_master -f
+ExecStop=/usr/sbin/condor_off -master
+ExecReload=/usr/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
+
