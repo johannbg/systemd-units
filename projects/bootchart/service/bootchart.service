@@ -1,0 +1,13 @@
+[Unit]
+Description=Collect Bootchart Data
+Wants=bootchart-done.timer
+Before=basic.target shutdown.target
+Conflicts=shutdown.target
+DefaultDependencies=no
+
+[Service]
+Type=notify
+ExecStart=/usr/sbin/bootchartd start
+
+[Install]
+WantedBy=default.target

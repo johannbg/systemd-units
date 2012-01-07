@@ -1,0 +1,14 @@
+[Unit]
+Description=Stop Read-Ahead Data Collection
+Before=shutdown.target
+After=default.target
+Conflicts=shutdown.target
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/bootchartd stop
+
+[Install]
+Also=bootchart.service
+

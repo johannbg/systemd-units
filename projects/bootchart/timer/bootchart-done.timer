@@ -1,0 +1,13 @@
+[Unit]
+Description=Stop Bootchart After Completed Startup
+Before=shutdown.target
+After=default.target
+Conflicts=shutdown.target
+DefaultDependencies=no
+
+[Timer]
+OnActiveSec=20s
+
+[Install]
+Also=bootchart.service
+
