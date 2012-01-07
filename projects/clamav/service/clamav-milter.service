@@ -1,0 +1,10 @@
+[Unit]
+Description=Milter Module For The Clam Antivirus Scanner
+Before=sendmail.service postfix.service
+
+[Service]
+ExecStart=/usr/sbin/clamav-milter -c /etc/mail/clamav-milter.conf --nofork=yes
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

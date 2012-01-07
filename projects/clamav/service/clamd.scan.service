@@ -1,0 +1,10 @@
+[Unit]
+Description=Generic Clamav Scanner Daemon
+Before=clamav-milter.service
+
+[Service]
+ExecStart=/usr/sbin/clamd -c /etc/clamd.d/scan.conf --nofork=yes
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
