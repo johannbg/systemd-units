@@ -1,0 +1,14 @@
+[Unit]
+Description=HA Logging Daemon
+After=network.target
+
+[Service]
+Type=forking
+PIDFile=/run/logd.pid
+ExecStart=/usr/lib64/heartbeat/ha_logd -d
+ExecStop=/usr/lib64/heartbeat/ha_logd -k
+TimeoutSec=1
+
+[Install]
+WantedBy=multi-user.target
+
