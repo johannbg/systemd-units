@@ -1,0 +1,9 @@
+[Unit]
+Description=CUPS Printing Service
+
+[Service]
+ExecStart=/usr/sbin/cupsd -f
+
+[Install]
+Also=cups.socket cups.path
+WantedBy=printer.target

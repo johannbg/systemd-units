@@ -1,0 +1,10 @@
+[Unit]
+Description=CUPS Printing Service Sockets
+
+[Socket]
+ListenStream=/var/run/cups/cups.sock
+ListenStream=631
+BindIPv6Only=ipv6-only
+
+[Install]
+WantedBy=sockets.target
