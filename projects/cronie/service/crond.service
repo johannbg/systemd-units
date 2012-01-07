@@ -1,0 +1,10 @@
+[Unit]
+Description=Command Scheduler
+After=auditd.service sssd.service ypbind.service
+
+[Service]
+ExecStart=/usr/sbin/crond -n 
+
+[Install]
+WantedBy=multi-user.target
+
